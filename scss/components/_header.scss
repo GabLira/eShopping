@@ -1,0 +1,58 @@
+.header {
+  @include position-fixed;
+  display: flex;
+  height: 60px;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 1px 1px 4px 0 $shadow-color;
+  background: $primary-color-dark;
+  z-index: 2;
+
+  &__icon {
+    font-size: 1.3rem;
+    color: $primary-color-light;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    color: $primary-text-color;
+
+    &--custom {
+      color: $primary-color-light;
+    }
+  }
+
+  @media screen and (min-width: 360px) {
+    height: 60px;
+
+    &__title {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+
+    &__title {
+      font-size: 2rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+
+
+  }
+}
+
+//Estilos para menu deslizante
+.show {
+  display: flex;
+  position: fixed;
+  top: 64px;
+  width: 400px;
+  height: 100%;
+  right: 0;
+  transition: all .5s ease;
+  background: $primary-color-light;
+}

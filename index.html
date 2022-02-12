@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eShopping</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/03021e95a3.js" crossorigin="anonymous"></script>
+    <script src="js/app.js" type="module"></script>
+</head>
+<body>
+<!--header-->
+<header class="header">
+    <span class="header__icon bar__icon">
+        <i class="fas fa-bars"></i>
+    </span>
+    <h1 class="header__title"><span class="header__title--custom">e</span>Shopping</h1>
+    <span class="header__icon">
+        <i class="fas fa-shopping-cart"></i>
+    </span>
+</header>
+<!--bar search-->
+<section class="container__search">
+    <form class="form__search" id="form" name="form">
+        <input type="text" class="search" placeholder="Search">
+        <button class="icon__search">
+            <i class="fas fa-search"></i>
+        </button>
+    </form>
+</section>
+<!--category-->
+<section class="container__category">
+    <!--tv-->
+    <article class="category">
+        <header class="category__icon">
+            <i class="fas fa-tv"></i>
+            <h3 class="category__title">TV</h3>
+        </header>
+
+    </article>
+    <!--cameras-->
+    <article class="category">
+        <header class="category__icon">
+            <i class="fas fa-camera"></i>
+            <h3 class="category__title">Cameras</h3>
+        </header>
+    </article>
+    <!--mobiles-->
+    <article class="category">
+        <header class="category__icon">
+            <i class="fas fa-mobile-alt"></i>
+            <h3 class="category__title category__mobiles">Mobiles</h3>
+        </header>
+    </article>
+    <!--computers-->
+    <article class="category">
+        <header class="category__icon">
+            <i class="fas fa-laptop"></i>
+            <h3 class="category__title">Computers</h3>
+        </header>
+    </article>
+</section>
+<!--slide menu-->
+<aside class="lateral opacity">
+    <header class="lateral__menu">
+        <!--user-->
+        <button class="lateral__menu--icon">
+            <i class="far fa-user"></i>
+        </button>
+        <!--favorite-->
+        <button class="lateral__menu--icon">
+            <i class="far fa-heart"></i>
+        </button>
+        <!--refresh-->
+        <button class="lateral__menu--icon">
+            <i class="fas fa-retweet"></i>
+        </button>
+        <!--world-->
+        <button class="lateral__menu--icon">
+            <i class="fas fa-globe"></i>
+        </button>
+    </header>
+    <article class="lateral__width">
+        <ul class="lateral__list">
+            <li class="lateral__list--choice">
+                Home
+                <i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="lateral__list--choice">
+                Catalog
+                <i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="lateral__list--choice">
+                Blog
+                <i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="lateral__list--choice">
+                Pages
+                <i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="lateral__list--choice">
+                Features
+                <i class="fas fa-chevron-right"></i>
+            </li>
+            <li class="lateral__list--choice">
+                Gift Cards
+                <i class="fas fa-chevron-right"></i>
+            </li>
+        </ul>
+    </article>
+    <footer class="lateral__footer">
+        <button class="lateral__footer--icon">
+            <i class="fas fa-phone-alt"></i>
+            <span class="lateral__footer--name">Call</span>
+        </button>
+        <button class="lateral__footer--icon">
+            <i class="far fa-envelope"></i>
+            <span class="lateral__footer--name">Contact</span>
+        </button>
+        <button class="lateral__footer--icon">
+            <i class="fas fa-globe"></i>
+            <span class="lateral__footer--name">Info</span>
+        </button>
+        <button class="lateral__footer--icon">
+            <i class="fas fa-map-marker-alt"></i>
+            <span class="lateral__footer--name">Directions</span>
+        </button>
+    </footer>
+</aside>
+<main class="container"></main>
+</body>
+</html>

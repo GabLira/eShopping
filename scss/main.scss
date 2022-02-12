@@ -1,0 +1,19 @@
+@import "mixins";
+@import "variables";
+@import "components/header";
+@import "components/section";
+@import "components/aside";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: $primary-color;
+}
