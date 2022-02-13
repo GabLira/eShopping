@@ -1,9 +1,20 @@
+//functions
 @mixin position-fixed($top: 0, $lft: 0) {
   position: fixed;
   top: $top;
   left: $lft;
 }
+@mixin display-flex($flx: flex, $just-cont: center) {
+  display: $flx;
+  justify-content: $just-cont;
+}
 
+@mixin outline-borders($outln: none, $brdr: none) {
+  outline: $outln;
+  border: $brdr;
+}
+
+//components
 @mixin lateral {
   display: flex;
   position: fixed;
@@ -24,16 +35,44 @@
 }
 
 @mixin lateral__menu--icon {
-  display: flex;
+  @include display-flex;
+  @include outline-borders;
   align-items: center;
-  justify-content: center;
   background: none;
-  border: none;
-  outline: none;
   margin: 20px;
   font-size: 1.3rem;
   padding: 10px;
   width: 47px;
   height: 66px;
   border-left: 1px solid $border-color;
+}
+
+@mixin container__search {
+  @include display-flex;
+  position: relative;
+  top: 85px;
+  width: 100%;
+}
+
+@mixin search {
+  padding: 15px;
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  outline: none;
+  font-size: 1rem;
+  border: 3px solid $primary-text-color;
+}
+
+@mixin icon__search {
+  @include outline-borders;
+  position: relative;
+  height: 40px;
+  bottom: 40px;
+  left: 208px;
+  width: 55px;
+  padding: 5px;
+  font-size: 1.1rem;
+  border-radius: 0 20px 20px 0;
+  background: $primary-text-color;
 }

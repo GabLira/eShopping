@@ -1,0 +1,15 @@
+.header__search {
+  display: none;
+  @media screen and (min-width: 1024px) {
+    @include container__search;
+    top: 0;
+
+    .search {
+      @include search;
+
+      .icon__search {
+        @include icon__search;
+      }
+    }
+  }
+}

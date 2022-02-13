@@ -1,35 +1,15 @@
 .container__search {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: 85px;
-  width: 100%;
+  @include container__search;
 
   .search {
-    padding: 15px;
-    height: 40px;
-    width: 100%;
-    border-radius: 20px;
-    outline: none;
-    font-size: 1rem;
-    border: 2px solid $primary-text-color;
+    @include search;
   }
 
   .icon__search {
-    position: relative;
-    border: none;
-    outline: none;
-    height: 40px;
-    bottom: 40px;
-    left: 208px;
-    width: 55px;
-    padding: 5px;
-    font-size: 1.35rem;
-    border-radius: 0 20px 20px 0;
-    background: $primary-text-color;
+    @include icon__search;
   }
 
-  @media screen and (min-width: 260px) {
+  @media screen and (min-width: 360px) {
     top: 95px;
 
     .search {
@@ -40,24 +20,52 @@
     .icon__search {
       height: 45px;
       bottom: 45px;
-      left: 307px;
+      left: 310px;
+      font-size: 1.3rem;
     }
   }
   @media screen and (min-width: 768px) {
     top: 105px;
 
+    #form {
+      width: 70%;
+    }
+
     .search {
       height: 55px;
-      font-size: 1.6rem
+      font-size: 1.6rem;
+      padding: 20px;
     }
     .icon__search {
       height: 55px;
       bottom: 55px;
-      left: 393px;
+      left: 505px;
+      font-size: 1.6rem;
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 860px) {
+    .search {
+      height: 65px;
+      font-size: 2rem;
+    }
+    .icon__search {
+      height: 65px;
+      bottom: 65px;
+      left: 565px;
+      width: 65px;
+      min-width: 65px;
+      font-size: 2rem;
+    }
+  }
 
+  @media screen and (min-width: 1024px) {
+    .search {
+      display: none;
+    }
+
+    .icon__search {
+      left: 640px;
+    }
   }
 }
 
@@ -66,24 +74,26 @@
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
-  top: 70px;
+  top: 100px;
   gap: 10px;
 
   width: 100%;
 
   .category {
+    display: block;
+    margin: 0 auto;
     padding: 5px;
 
     i {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2rem;
+      font-size: 1.7rem;
       line-height: 0.7;
     }
 
     &__title {
-      font-size: .85rem;
+      font-size: .90rem;
       text-align: center;
 
       &:active {
@@ -96,11 +106,11 @@
     }
   }
 
-  @media screen and (min-width: 260px) {
+  @media screen and (min-width: 360px) {
     gap: 15px;
 
     &__title {
-      font-size: 1rem;
+      font-size: .95rem;
     }
   }
 
@@ -110,10 +120,24 @@
     .category {
       padding: 10px;
 
+      i {
+        font-size: 2.1rem;
+      }
+
       &__title {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
       }
     }
+  }
+  @media screen and (min-width: 860px) {
+    font-size: 2.5rem;
 
+    i {
+      font-size: 2.5rem;
+    }
+
+    .category__title {
+      font-size: 2.1rem;
+    }
   }
 }

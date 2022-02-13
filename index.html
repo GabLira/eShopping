@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShopping</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="https://kit.fontawesome.com/03021e95a3.js" crossorigin="anonymous"></script>
     <script src="js/app.js" type="module"></script>
 </head>
@@ -15,10 +16,44 @@
         <i class="fas fa-bars"></i>
     </span>
     <h1 class="header__title"><span class="header__title--custom">e</span>Shopping</h1>
+        <form class="header__search" name="form">
+            <input type="text" class="header__search--input" placeholder="Search">
+            <button class="header__search--icon">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
     <span class="header__icon">
         <i class="fas fa-shopping-cart"></i>
     </span>
 </header>
+<!--nav bar-->
+<nav class="nav__menu">
+    <ul class="nav__menu--categories">
+        <li class="nav__menu--item">All departments</li>
+        <div class="nav__categories">
+            <ul class="nav__categories__departments">
+                <li class="nav__categories__list">
+                    <a href="#">Tv</a>
+                </li>
+                <li class="nav__categories__list">
+                    <a href="#">Cameras</a>
+                </li>
+                <li class="nav__categories__list">
+                    <a href="#">Mobiles</a>
+                </li>
+                <li class="nav__categories__list">
+                    <a href="#">Computers</a>
+                </li>
+            </ul>
+        </div>
+        <li class="nav__menu--item">History</li>
+        <li class="nav__menu--item">Official stores</li>
+        <li class="nav__menu--item">Top offers</li>
+        <li class="nav__menu--item">Sell</li>
+        <li class="nav__menu--item">Help</li>
+    </ul>
+
+</nav>
 <!--bar search-->
 <section class="container__search">
     <form class="form__search" id="form" name="form">
