@@ -1,0 +1,34 @@
+.container {
+
+  position: relative;
+  top: 100px;
+  background: green;
+
+  .container__list {
+    @include display-flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .list__items {
+      @include display-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px;
+      background: $primary-color-light;
+
+      &--image {
+        @include display-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        /* top: 100px; */
+        width: 160px;
+      }
+
+      &--name {
+        text-align: center;
+      }
+    }
+  }
+}
