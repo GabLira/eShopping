@@ -1,6 +1,9 @@
 import {buildListTPL} from "./components/templates/mobile-list.js";
+import {buildCarTPL} from "./components/templates/car.js";
 import {PrinterManager} from "./components/templates/manager.js";
 import {lateralMenu} from "./components/lateral-menu.js";
+
+const button = document.querySelector('.list__items--btn');
 
 const execute = () => {
 //Variables
@@ -16,33 +19,14 @@ const execute = () => {
             container.innerHTML = 'La API fallo'
         }
     }
-    addEventListener('load', getProducts);
-    /*
-    const container = document.querySelector('.container');
-    let products = [];
-    const printer = new PrinterManager();
-    // window.products = new Products();
+    getProducts(getProducts);
 
-    printer.print('.container', buildListTPL(Array.from(products.items.values())));
+    button.addEventListener('click', element => {
+        element.forEach({
 
-    async function loadItems() {
-        return (await axios('./json/database.json')).json()
-    }
-
-    container.addEventListener('DOMContentLoaded', async () => {
-        try {
-            products = await loadItems();
-        } catch (e) {
-            console.log('Error!');
-            console.log(e);
-        }
-        console.log(22, products);
+        });
     });
-    const build = element => {
-        const button = element.querySelector('.product__item');
-    };
 
-    const get
-*/
+
 }
 window.addEventListener("DOMContentLoaded", execute);

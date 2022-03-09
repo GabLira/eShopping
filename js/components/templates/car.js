@@ -1,13 +1,12 @@
-export const buildListTPL = products => {
+export const buildCarTPL = productsCar => {
     try {
-        const output = products.reduce((previous, item) => {
+        const output = productsCar.reduce((previous, item) => {
             return `${previous}
         <li class="list__items">
             <img src=${item.image} alt=${item.title} title=${item.title}
              class="list__items--image">
             <header class="list__items--name">${item.name}</header>
             <p class="list__items--price"><span class="items__price--custom">Price:</span> ${item.price}$</p>
-            <button class="list__items--btn">Shop now</button>
             <div class="error__message"></div>
         </li>
         `;
@@ -16,5 +15,4 @@ export const buildListTPL = products => {
     }catch (e) {
         console.log(e)
     }
-
-};
+}

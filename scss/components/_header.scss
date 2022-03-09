@@ -1,13 +1,7 @@
 .header {
   @include position-fixed;
-  display: flex;
-  height: 60px;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 1px 1px 4px 0 $shadow-color;
-  background: $primary-color-dark;
-  z-index: 2;
+  @include display-flex;
+  @include header;
 
   &__icon {
     font-size: 1.1rem;
