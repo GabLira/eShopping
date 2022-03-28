@@ -1,7 +1,8 @@
 .header {
   @include position-fixed;
-  @include display-flex;
   @include header;
+  display: flex;
+  justify-content: space-between;
 
   &__icon {
     font-size: 1.1rem;

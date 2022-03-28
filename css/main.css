@@ -2,14 +2,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
   height: 60px;
   width: 100%;
   align-items: center;
   box-shadow: 1px 1px 4px 0 #00000024;
   background: #2b404a;
   z-index: 2;
+  display: flex;
+  justify-content: space-between;
 }
 .header__icon {
   font-size: 1.1rem;
@@ -415,13 +415,32 @@
 
 .container__footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 1.5em;
   width: 100%;
   filter: drop-shadow(1px 4px 13px #2b404a);
 }
 
+.container__loader:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  top: calc(50% - 10px);
+  background: #ff7b52;
+  animation: rotatemove 1s infinite;
+}
+
+@keyframes rotatemove {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  100% {
+    transform: scale(2) translateX(45px);
+  }
+}
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
