@@ -1,7 +1,11 @@
 import {buildListTPL} from "./components/templates/mobile-list.js";
+import {buildCarTPL} from "./components/templates/build-car.js";
+import {Product} from "./components/car.js";
 
-const execute = () => {
+const execute = async () => {
     const container = document.querySelector('.container');
+    const carProducts = document.querySelector('.container__list--car');
+    const containerCar = document.querySelector('.container__car');
     const localStorage = window.localStorage;
     let outputCar = '';
     let total = 0;
@@ -15,15 +19,18 @@ const execute = () => {
             container.innerHTML = 'La API fallo';
         }
     };
-    getProducts(getProducts);
-    const button = document.querySelectorAll('.list__items--btn');
+   await getProducts(getProducts);
 
-    const buttonActive = () => {
+    const shoppingCar = ({item: image, name, price}) => {
+
+        let carItems = new Product(image, name, price);
+        carItems.Product.showItems();
+
         console.log('FUNCIONO')
-    }
+    };
 
-    console.log(button)
-    Array.from(button).forEach(element => element.addEventListener('click', buttonActive));
+    const button = document.querySelectorAll('.list__items--btn');
+    Array.from(button).forEach(element => element.addEventListener('click', shoppingCar));
 
 
     //Loader
