@@ -6,28 +6,69 @@ const execute = async () => {
     const container = document.querySelector('.container');
     const carProducts = document.querySelector('.container__list--car');
     const containerCar = document.querySelector('.container__car');
+    const message = document.querySelector('.error__message');
     const localStorage = window.localStorage;
     let outputCar = '';
     let total = 0;
-    let car = [];
+    let cart = [];
+    const link = './json/database.json';
 
     const getProducts = async () => {
         try {
             let result = await axios('./json/database.json');
             container.innerHTML += buildListTPL(result.data);
         } catch (e) {
-            container.innerHTML = 'La API fallo';
+            container.innerHTML = 'The API failed';
         }
     };
-   await getProducts(getProducts);
+    await getProducts(getProducts);
 
-    const shoppingCar = ({item: image, name, price}) => {
+    const shoppingCar = ({currentTarget: target}) => {
+        const productId = parseInt(target.dataset.id);
 
-        let carItems = new Product(image, name, price);
-        carItems.Product.showItems();
+        console.log(productId);
+        cart.find(item => item.data.id === productId);
+        console.log(renderCart)
+        renderCart();
 
-        console.log('FUNCIONO')
+        cart.push(productId);
+        console.log(cart)
+        /*
+        const link = '/json/database.json';
+
+        console.log('Carrito: ', cart, 'Propiedades: ', link['image'], link['name'], link.price);
+*/
     };
+    const renderCart = async () => {
+        console.log(containerCar)
+        containerCar.innerHTML = '';
+        cart.forEach(buildCarTPL);
+        try {
+            let result = await axios('./json/database.json');
+            containerCar.innerHTML += buildCarTPL(result.data);
+        } catch (e) {
+            container.innerHTML = 'The API failed';
+        }
+    };
+
+    class Storage {
+        static saveProduct(items) {
+            localStorage.setItem('products', JSON.stringify(items));
+        };
+
+        static saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        };
+
+        static getProducts(id) {
+            const product = JSON.parse(localStorage.getItem('products'));
+            product.find(item => item.id === parseFloat(id));
+        };
+
+        static getCart() {
+            return localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+        };
+    }
 
     const button = document.querySelectorAll('.list__items--btn');
     Array.from(button).forEach(element => element.addEventListener('click', shoppingCar));

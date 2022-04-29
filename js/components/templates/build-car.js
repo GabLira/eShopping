@@ -1,19 +1,16 @@
-export const buildCarTPL = productsCar => {
+export const buildCarTPL = item => {
     try {
         const badge = '$';
-        const output = productsCar.reduce((previous, item) => {
-            return `${previous}
-        <li class="list__items">
-            <img src=${item.image} alt=${item.title} title=${item.title}
-             class="list__items--image">
-            <header class="list__items--name">${item.name}</header>
-            <p class="list__items--price"><span class="items__price--custom">Price:</span> ${item.price}${badge}</p>
-            <div class="error__message"></div>
-        </li>
-        `;
-        }, '');
-        return `<ul class="container__list--car">${output}<ul/>`
-    }catch (e) {
+        return `<ul class="container__list--car">
+            <li class="list__items">
+                <img src=${item.image} alt=${item.title} title=${item.title}
+                 class="list__items--image">
+                <header class="list__items--name">${item.name}</header>
+                <p class="list__items--price"><span class="items__price--custom">Price:</span> ${item.price}${badge}</p>
+                <div class="error__message"></div>
+            </li>
+        </ul>`;
+    } catch (e) {
         console.log(e)
     }
 }
